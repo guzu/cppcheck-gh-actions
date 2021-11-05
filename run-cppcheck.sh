@@ -33,6 +33,7 @@ cppcheck "$INPUT_PATH" \
     ${ERROR_CODE:+--error-exitcode=127} \
     "$INPUT_INCLUDE_DIRECTORIES" \
     "$INPUT_EXCLUDE_FROM_CHECK"
+RET=$?
 
 if [ "$GENERATE_REPORT" ]; then
     cppcheck-htmlreport \
@@ -40,3 +41,5 @@ if [ "$GENERATE_REPORT" ]; then
         --title="$INPUT_REPORT_NAME" \
         --report-dir=output
 fi
+
+exit $RET
