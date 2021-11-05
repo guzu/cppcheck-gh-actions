@@ -19,6 +19,10 @@ if [ "$INPUT_ENABLED_INCONCLUSIVE" = 'true' ]; then
     ENABLE_INCONCLUSIVE='yep'
 fi
 
+if [ "$INPUT_ERROR_CODE" = 'true' ]; then
+    ERROR_CODE='yep'
+fi
+
 cppcheck "$INPUT_PATH" \
     --enable="$INPUT_ENABLED_CHECKS" \
     ${ENABLE_INCONCLUSIVE:+--inconclusive} \
@@ -26,7 +30,7 @@ cppcheck "$INPUT_PATH" \
     ${VERBOSE:+--verbose} \
     ${CHECK_CONFIG:+--check-config} \
     -j "$(nproc)" \
-    --xml \
+    ${ERROR_CODE:+--error-exitcode=127} \
     "$INPUT_INCLUDE_DIRECTORIES" \
     "$INPUT_EXCLUDE_FROM_CHECK"
 
