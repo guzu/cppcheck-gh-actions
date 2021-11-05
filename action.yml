@@ -17,6 +17,10 @@ inputs:
     description: 'Enable inconclusive checks'
     required: false
     default: false
+  enable errorcode:
+    description: 'Action fails on errors'
+    required: false
+    default: true
   exclude from check:
     description: 'Which directories or files to exclude from analysis; format: paths prefixed with `-i`, space-delimited'
     required: false
