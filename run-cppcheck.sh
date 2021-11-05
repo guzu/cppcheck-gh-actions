@@ -19,7 +19,7 @@ if [ "$INPUT_ENABLED_INCONCLUSIVE" = 'true' ]; then
     ENABLE_INCONCLUSIVE='yep'
 fi
 
-if [ "$INPUT_ERROR_CODE" = 'true' ]; then
+if [ "$INPUT_ENABLE_ERRORCODE" = 'true' ]; then
     ERROR_CODE='yep'
 fi
 
