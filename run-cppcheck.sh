@@ -23,6 +23,8 @@ if [ "$INPUT_ENABLE_ERRORCODE" = 'true' ]; then
     ERROR_CODE='yep'
 fi
 
+cppcheck --version
+
 cppcheck "$INPUT_PATH" \
     --enable="$INPUT_ENABLED_CHECKS" \
     ${ENABLE_INCONCLUSIVE:+--inconclusive} \
